@@ -9,13 +9,14 @@
 " ============================================
 
 set nocompatible 
+filetype plugin on
 filetype off
-set rtp +=~/.vim/bundle/Vundle.vim
+"Plugin 'scrooloose/nerdtree'
+set rtp+=~/.vim/bundle/Vundle.vim
 set rtp+=~
 "Install the plugins here
 call vundle#begin()
 Plugin 'vim-airline/vim-airline'
-Plugin 'scrooloose/nerdtree'
 call vundle#end()
 filetype plugin indent on
 
@@ -23,12 +24,24 @@ filetype plugin indent on
 "NerdTree settings
 set encoding=utf-8
 
-
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-autocmd VimEnter * NERDTree 
-autocmd BufWinEnter * NERDTreeMirror 
+"autocmd VimEnter * NERDTree 
+"autocmd BufWinEnter * NERDTreeMirror 
+
+" netrw settings
+"let g:netrw_banner = 0
+"autocmd FileType netrw setl bufhidden=delete
+"let g:netrw_preview =1 
+"let g:netrw_liststyle = 3
+""let g:netrw_liststyle = 3
+""let g:netrw_browse_split = 2 
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 15 
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 
 " Better copy & paste
@@ -105,14 +118,13 @@ vnoremap > >gv  " better indentation
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
-au InsertLeave * match ExtraWhitespace /\s\+$/
+"autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 "Color scheme
 "mkdir -p ~/.vim/colors && cd ~/.vim/colors
 "wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
-color wombat256mod
 
 
 " Enable syntax highlighting
