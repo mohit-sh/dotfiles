@@ -17,6 +17,7 @@ set rtp+=~
 "Install the plugins here
 call vundle#begin()
 Plugin 'vim-airline/vim-airline'
+Plugin 'tpope/vim-vinegar'
 call vundle#end()
 filetype plugin indent on
 
@@ -30,14 +31,14 @@ autocmd! bufwritepost .vimrc source %
 "autocmd BufWinEnter * NERDTreeMirror 
 
 " netrw settings
-"let g:netrw_banner = 0
+let g:netrw_banner=0
 "autocmd FileType netrw setl bufhidden=delete
-"let g:netrw_preview =1 
-"let g:netrw_liststyle = 3
-""let g:netrw_liststyle = 3
-""let g:netrw_browse_split = 2 
-"let g:netrw_altv = 1
-"let g:netrw_winsize = 15 
+let g:netrw_preview=1  
+"" stree style listing
+"let g:netrw_liststyle=3
+"let g:netrw_browse_split=4 
+"let g:netrw_altv=1
+"let g:netrw_winsize=25 
 "augroup ProjectDrawer
 "  autocmd!
 "  autocmd VimEnter * :Vexplore
@@ -72,6 +73,9 @@ ino <right> <nop>
 " it is next to ``m`` and ``n`` which I use for navigating between tabs.
 let mapleader = ","
 
+" Try making the tab label to just filename instead of filepath
+" Didn't work, look around for more details
+set guitablabel=%t
 
 " Bind nohl
 " Removes highlight of your last search
@@ -132,6 +136,9 @@ set t_Co=256
 filetype off
 filetype plugin indent on
 syntax on
+
+" Set the colorscheme
+colorscheme pablo
 
 
 " Showing line numbers and length
